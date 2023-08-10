@@ -51,22 +51,22 @@ class Group {
       });
 
   Group.fromJson(dynamic json) {
-    groupMaxQuizzes=json["Group Max Quizzes"];
-    groupMaxExams=json["Group Max Exams"];
-    groupMaxHw=json["Group Max HW"];
-    groupMaxApplyHw=json["Group Max Apply HW"];
-    groupMaxApplyQuizzes=json["Group Max Apply Quizzes"];
-    groupMaxApplyExams=json["Group Max Apply Exams"];
-    groupRank = json["Group Rank"];
-    groupTotalMathsStudents=json['Group Total Maths Students'];
-    groupTotalApplyStudents=json['Group Total Apply Students'];
-    groupTotalStudents = json['Total Students'];
-    id = json['Group Id'];
-    title = json['Group Title'];
-    place = json['Group Place'];
-    teacherId = json['Teacher Id'];
-    groupStartStudentCode = json['Group Start Student Code'];
-    stageIdOfGroup =json['Stage Id Of Group'];
+    groupMaxQuizzes=json["groupMaxQuizzes"];
+    groupMaxExams=json["groupMaxExams"];
+    groupMaxHw=json["groupMaxHw"];
+    groupMaxApplyHw=json["groupMaxApplyHw"];
+    groupMaxApplyQuizzes=json["groupMaxApplyQuizzes"];
+    groupMaxApplyExams=json["groupMaxApplyExams"];
+    groupRank = json["groupRank"];
+    groupTotalMathsStudents=json['groupTotalMathsStudents'];
+    groupTotalApplyStudents=json['groupTotalApplyStudents'];
+    groupTotalStudents = json['groupTotalStudents'];
+    id = json['id'];
+    title = json['title'];
+    place = json['place'];
+    teacherId = json['teacherId'];
+    groupStartStudentCode = json['groupStartStudentCode'];
+    stageIdOfGroup =json['stageIdOfGroup'];
 
     if (json['Groups of Messages'] != null) {
       groupsMessages = [];
@@ -85,22 +85,22 @@ class Group {
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map["Group Max Quizzes"]=groupMaxQuizzes;
-    map["Group Max Exams"]=groupMaxExams;
-    map["Group Max HW"]=groupMaxHw;
-    map["Group Max Apply Exams"] =groupMaxApplyExams;
-    map["Group Max Apply Quizzes"]=groupMaxApplyQuizzes;
-    map["Group Max Apply HW"]=groupMaxApplyHw;
-    map["Group Rank"]=groupRank;
-    map['Group Total Apply Students']=groupTotalApplyStudents;
-    map['Group Total Maths Students']=groupTotalMathsStudents;
-    map['Total Students'] = groupTotalStudents;
-    map['Group Id'] = id;
-    map["Group Place"] = place;
-    map["Teacher Id"] = teacherId;
-    map['Group Title'] = title;
-    map['Group Start Student Code'] = groupStartStudentCode;
-    map['Stage Id Of Group']=stageIdOfGroup;
+    map["groupMaxQuizzes"]=groupMaxQuizzes;
+    map["groupMaxExams"]=groupMaxExams;
+    map["groupMaxHw"]=groupMaxHw;
+    map["groupMaxApplyExams"] =groupMaxApplyExams;
+    map["groupMaxApplyQuizzes"]=groupMaxApplyQuizzes;
+    map["groupMaxApplyHw"]=groupMaxApplyHw;
+    map["groupRank"]=groupRank;
+    map['groupTotalApplyStudents']=groupTotalApplyStudents;
+    map['groupTotalMathsStudents']=groupTotalMathsStudents;
+    map['groupTotalStudents'] = groupTotalStudents;
+    map['_id'] = id;
+    map["place"] = place;
+    map["teacherId"] = teacherId;
+    map['title'] = title;
+    map['groupStartStudentCode'] = groupStartStudentCode;
+    map['stageIdOfGroup']=stageIdOfGroup;
 
     if (groupsMessages != null) {
       map['Groups of Messages'] =

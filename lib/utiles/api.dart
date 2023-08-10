@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 
 class Api {
 
+
   Future<dynamic> get({required String url, String? token}) async {
     Map<String, String> headers = {};
     if (token != null) {
@@ -16,6 +17,10 @@ class Api {
           'there is a problem with status code ${response.statusCode}');
     }
   }
+
+
+
+
 
   Stream<dynamic> getStream({required String url, String? token}) async* {
     while (true) {
@@ -36,6 +41,8 @@ class Api {
       await Future.delayed(Duration(seconds: 5)); // Delay before fetching again
     }
   }
+
+
 
 
   Future<dynamic> post(
@@ -66,7 +73,6 @@ class Api {
     if (token != null) {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
-
     print('url = $url body = $body token = $token ');
     http.Response response =
         await http.put(Uri.parse(url), body: body, headers: headers);
@@ -80,6 +86,8 @@ class Api {
     }
   }
 
+
+
   Future<void> deleteData({required String url}) async {// Replace with your API endpoint
     final response = await http.delete(Uri.parse(url));
     if (response.statusCode == 200) {
@@ -88,4 +96,7 @@ class Api {
       print('Failed to delete data. Status code: ${response.statusCode}');
     }
   }
+
+
+
 }

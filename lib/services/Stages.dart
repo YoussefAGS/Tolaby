@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 
 class StagesServices {
   static Future<List<Stage>?> getStags() async {
-    List<dynamic> response = await Api().get(url:'https://tolapyserver.onrender.com/teachers/${teacherr.teacher?.id}/stages');
+    List<dynamic> response = await Api().get(url:'https://tolapyserver.onrender.com/teacher/${teacherr.teacher?.id}/stages');
     int n = response.length;
     List<Stage> products = [];
     for (int i = 0; i < n; i++) {
@@ -20,7 +20,7 @@ class StagesServices {
   static Stream<List<Stage>> getStagesStream() async* {
     while (true) {
       List<dynamic> response =
-      await Api().get(url: 'https://tolapyserver.onrender.com/teachers/${teacherr.teacher?.id}/stages');
+      await Api().get(url: 'https://tolapyserver.onrender.com/teacher/${teacherr.teacher?.id}/stages');
       int n = response.length;
       List<Stage> stages = [];
       for (int i = 0; i < n; i++) {

@@ -5,7 +5,7 @@ import '../utiles/api.dart';
 class LoginUser {
   static Future<TeacherModel?> Login({required String email, required String password,}) async {
     Map<String, dynamic> data = await Api().post(
-      url: 'https://tolapyserver.onrender.com/login',
+      url: 'https://tolapyserver.onrender.com/teacher/login',
       body: {
         "username": email,
         "password": password

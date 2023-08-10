@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:tolaby/modles/stage_model.dart';
+import 'package:tolaby/screens/group/group_widget.dart';
 import 'package:tolaby/screens/stage/view/UpdatstageView.dart';
 import 'package:tolaby/screens/stage/widgets/ListTileComponent.dart';
 import 'package:tolaby/screens/stage/widgets/ScreenLockComponent.dart';
 import 'package:tolaby/services/Stages.dart';
-
-
 
 class  StageItem extends StatelessWidget {
   Stage stage;
@@ -64,7 +63,7 @@ class  StageItem extends StatelessWidget {
         ]),
         child: InkWell(
           onTap: () {
-            // viewModel.navigator!.goToGroupWidget();
+           Navigator.pushNamed(context, GroupWidget.routeName,arguments: stage);
           },
           child: ListTileComponent(
             startStudentCode: "${stage.stageRank}",
