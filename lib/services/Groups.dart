@@ -24,16 +24,17 @@ class GroupServices {
         group.add(Group.fromJson(response[i]));
       }
       yield group;
-      await Future.delayed(Duration(seconds: 5)); // Delay before fetching again
+      await Future.delayed(Duration(seconds: 1)); // Delay before fetching again
     }
   }
   ///---------------------------------------------------------------------------
 
   static Future<void> addGroup({required Group group}) async {
     await Api().post(url: "https://tolapyserver.onrender.com/groups", body: {
-      "title": group.title,
-      "place": group.place,
-      "stageIdOfGroup": group.id,
+      "title": "${group.title}",
+      "place": "${group.place}",
+      "stageIdOfGroup": "${group.stageIdOfGroup}",
+     "groupStartStudentCode":"${group.groupStartStudentCode}",
 
     });
   }
@@ -52,13 +53,14 @@ class GroupServices {
     Map<String, dynamic> response = await Api().put(url: 'https://tolapyserver.onrender.com/groups/${group.stageIdOfGroup}', body: {
       "title": "${group.title}",
       "groupStartStudentCode":"${group.groupStartStudentCode}",
-      "place":"${group.place}"
+      "place":"${group.place}",
+
     });
     yield Stage.fromJson(response);
   }
   static Future<Stage> updateGroup({required Group group}) async {
     Map<String, dynamic> response =
-    await Api().put(url:'https://tolapyserver.onrender.com/groups/${group.stageIdOfGroup}', body: {
+    await Api().put(url:'https://tolapyserver.onrender.com/groups/${group.id}', body: {
       "title": "${group.title}",
       "groupStartStudentCode":"${group.groupStartStudentCode}",
       "place":"${group.place}"
@@ -72,7 +74,7 @@ class GroupServices {
 
 
 
-  static Future<void> deleatGroup({required String id})async{
+  static Future<void> deleatGroup({required String? id})async{
     await Api().deleteData(url:"https://tolapyserver.onrender.com/groups/${id}");
   }
 

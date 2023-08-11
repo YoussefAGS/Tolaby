@@ -35,7 +35,7 @@ class StagesServices {
   static Future<void> addStage({required Stage stage}) async {
     await Api().post(url: "https://tolapyserver.onrender.com/stages", body: {
       "title": "${stage.title}",
-      "teacherId": "${stage.teacherId}",
+      "teacherId": "64d3da5cf65f4881924604a2",
     });
   }
   static Stream<void> addStageStream({required Stage stage}) async* {

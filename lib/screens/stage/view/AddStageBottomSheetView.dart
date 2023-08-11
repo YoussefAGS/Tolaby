@@ -230,7 +230,7 @@ class _AddStageBottomSheetViewState extends State<AddStageBottomSheetView> {
          groupAttendanceRank: 1,
          stageStudentsRank: 10,
        );
-       StagesServices.addStageStream(stage: stage);
+       StagesServices.addStage(stage: stage);
        Navigator.pop(context); // Pop from the current screen
        Navigator.pushReplacement(
          context,

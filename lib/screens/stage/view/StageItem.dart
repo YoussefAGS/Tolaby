@@ -25,7 +25,7 @@ class  StageItem extends StatelessWidget {
                 barrierDismissible: false,
                 builder: (context) {
                   return ScreenLockComponent((){
-                   StagesServices.deleteStageStream(id: stage.id!);
+                   StagesServices.deleatStage(id: stage.id!);
                     Navigator.pop(context);
                   });
                 },

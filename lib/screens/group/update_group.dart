@@ -3,6 +3,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tolaby/screens/group/group_item.dart';
+import 'package:tolaby/services/Groups.dart';
 import 'package:tolaby/utiles/constant.dart';
 class UpdateGroup extends StatefulWidget {
   static const String routeName = "Update Group";
@@ -319,13 +320,7 @@ class _UpdateGroupState extends State<UpdateGroup> {
                     onPressed: () {
                       if (formkey.currentState!.validate()) {
                         Navigator.pop(context);
-                        for (int i = 0; i <  stageAndGroup.currentStage.totalGroupsOfStage!.length; i++) {
-                          if (stageAndGroup.currentStage.totalGroupsOfStage![i].id == stageAndGroup.currentGroup.id) {
-                            stageAndGroup.currentStage.totalGroupsOfStage![i]=stageAndGroup.currentGroup;
-                            // GroupDatabase.updateGroupInFirebase(stageAndGroup.currentGroup);
-                            break;
-                          }
-                        }
+                        GroupServices.updateGroup(group: stageAndGroup.currentGroup);
                       }
                     },
                     style: ElevatedButton.styleFrom(

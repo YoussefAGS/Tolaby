@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tolaby/screens/group/add_group.dart';
 import 'package:tolaby/screens/group/group_widget.dart';
+import 'package:tolaby/screens/group/update_group.dart';
 import 'package:tolaby/screens/home/home_categories/home_categories_view.dart';
 import 'package:tolaby/screens/home/teacher_home_view/teacher_home_view.dart';
 import 'package:tolaby/screens/login/bloc_login/login_bloc.dart';
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
             StageView.routName:(_)=>StageView(),
             UpdateStage.routeName:(_)=>UpdateStage(),
             GroupWidget.routeName:(_)=>GroupWidget(),
-            AddGroupWidget.routeName:(_)=>AddGroupWidget()
+            AddGroupWidget.routeName:(_)=>AddGroupWidget(),
+            UpdateGroup.routeName:(_)=>UpdateGroup()
           },
         ));
   }

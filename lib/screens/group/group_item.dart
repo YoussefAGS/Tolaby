@@ -9,6 +9,7 @@ import 'package:tolaby/modles/group_model.dart';
 import 'package:tolaby/modles/stage_model.dart';
 import 'package:tolaby/screens/group/update_group.dart';
 import 'package:tolaby/screens/stage/widgets/ScreenLockComponent.dart';
+import 'package:tolaby/services/Groups.dart';
 
 class GroupItem extends StatefulWidget {
   Group group;
@@ -50,19 +51,7 @@ class _GroupItemState extends State<GroupItem> {
                 barrierDismissible: false,
                 builder: (context) {
                   return  ScreenLockComponent((){
-                    // GroupDatabase.deleteGroup(widget.group);
-                    --widget.stage.totalGroupsOfStageNumber;
-                    --widget.stage.groupRank;
-                    widget.stage.totalStudentsOfStageNumber =  widget.stage.totalStudentsOfStageNumber - widget.group.groupTotalMathsStudents!.toInt();
-                    widget.stage.totalStudentsOfApplyStageNumber =  widget.stage.totalStudentsOfApplyStageNumber - widget.group.groupTotalApplyStudents!.toInt();
-
-                    for(int i=0;i<widget.stage.totalGroupsOfStage!.length;i++){
-                      if(widget.stage.totalGroupsOfStage![i].id==widget.group.id){
-                        widget.stage.totalGroupsOfStage!.removeAt(i);
-                        // StageDatabase.updateStagesInFirebase(widget.stage);
-                        break;
-                      }
-                    }
+                    GroupServices.deleatGroup(id: widget.group.id);
                     Navigator.pop(context);
                   });
                 },

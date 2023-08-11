@@ -61,7 +61,7 @@ class Group {
     groupTotalMathsStudents=json['groupTotalMathsStudents'];
     groupTotalApplyStudents=json['groupTotalApplyStudents'];
     groupTotalStudents = json['groupTotalStudents'];
-    id = json['id'];
+    id = json['_id'];
     title = json['title'];
     place = json['place'];
     teacherId = json['teacherId'];
