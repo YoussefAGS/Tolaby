@@ -11,6 +11,8 @@ import 'package:tolaby/screens/login/bloc_login/login_bloc.dart';
 import 'package:tolaby/screens/login/login_view.dart';
 import 'package:tolaby/screens/stage/view/UpdatstageView.dart';
 import 'package:tolaby/screens/stage/view/stage_view.dart';
+import 'package:tolaby/screens/student/add_student/add_student_view.dart';
+import 'package:tolaby/screens/student/student_widget.dart';
 import 'package:tolaby/utiles/constant.dart';
 
 void main() async {
@@ -40,7 +42,9 @@ class MyApp extends StatelessWidget {
             UpdateStage.routeName:(_)=>UpdateStage(),
             GroupWidget.routeName:(_)=>GroupWidget(),
             AddGroupWidget.routeName:(_)=>AddGroupWidget(),
-            UpdateGroup.routeName:(_)=>UpdateGroup()
+            UpdateGroup.routeName:(_)=>UpdateGroup(),
+            StudentWidget.routeName:(_)=>StudentWidget(),
+            AddStudent.routeName:(_)=>AddStudent(),
           },
         ));
   }

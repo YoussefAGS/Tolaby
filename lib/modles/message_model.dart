@@ -19,21 +19,21 @@ class Message {
 
   Message.fromJson(Map<String, dynamic> json)
       : this(
-    stageIdOfMessage:json['Stage Id Of Message'],
-    messageId: json['Message Id'],
-    messageContent: json['Message Content'],
-    teacherIdOfMessage : json['Teacher Id Of Message'],
-    groupIdOfMessage : json['Group Id Of Message'],
+    stageIdOfMessage:json['stageIdOfMessage'],
+    messageId: json['messageId'],
+    messageContent: json['messageContent'],
+    teacherIdOfMessage : json['teacherIdOfMessage'],
+    groupIdOfMessage : json['groupIdOfMessage'],
       v : json['__v']
   );
 
   Map<String, dynamic> toJson() {
     return {
-      "Stage Id Of Message":stageIdOfMessage,
-      "Message Id": messageId,
-      "Message Content": messageContent,
-      'Teacher Id Of Message':teacherIdOfMessage,
-      'Group Id Of Message':groupIdOfMessage,
+      "stageIdOfMessage":stageIdOfMessage,
+      "messageId": messageId,
+      "messageContent": messageContent,
+      'teacherIdOfMessage':teacherIdOfMessage,
+      'groupIdOfMessage':groupIdOfMessage,
       '__v':v,
     };
   }

@@ -11,6 +11,8 @@ import 'package:tolaby/screens/group/update_group.dart';
 import 'package:tolaby/screens/stage/widgets/ScreenLockComponent.dart';
 import 'package:tolaby/services/Groups.dart';
 
+import '../student/student_widget.dart';
+
 class GroupItem extends StatefulWidget {
   Group group;
   Stage stage;
@@ -98,8 +100,8 @@ class _GroupItemState extends State<GroupItem> {
         ]),
         child: InkWell(
           onTap: () {
-            // Navigator.pushNamed(context, StudentWidget.routeName,
-            //     arguments: StageAndGroup(widget.group, widget.stage));
+            Navigator.pushNamed(context, StudentWidget.routeName,
+                arguments: StageAndGroup(widget.group, widget.stage));
           },
           child:Container(
             margin: const EdgeInsets.only(bottom: 16,right: 4,left: 4),

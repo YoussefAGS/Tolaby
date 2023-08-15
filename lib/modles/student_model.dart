@@ -44,13 +44,13 @@ class Student {
     required this.studentParentPhoneNumber,
     required this.studentAddress,
     required this.studentImageUrl,
-     this.totalCompleteQuiz=0,
-     this.totalCompleteHw=0,
-     this.totalCompleteExam=0,
+    this.totalCompleteQuiz=0,
+    this.totalCompleteHw=0,
+    this.totalCompleteExam=0,
     this.totalCompleteApplyQuiz=0,
     this.totalCompleteApplyHw=0,
     this.totalCompleteApplyExam=0,
-     this.totalAttendanceLessons,
+    this.totalAttendanceLessons,
     required this.groupIdOfStudent,
     required this.groupNameOfStudent,
     required this.stageIdOfStudent,
@@ -66,31 +66,31 @@ class Student {
   });
 
   Student.fromJson(dynamic json) {
-    studentCompleteId = json["Student Complete Id"];
-    startStudentCode = json['Start Student Code'];
-    studentId = json['Student Id'];
-    teacherId = json['Teacher Id'];
-    studentDataBaseID= json['Student DataBase ID'];
-    studentName = json['Student First Name'];
-    studentImageUrl = json['Student image Url'];
-    studentEmail = json['Student Email'];
-    studentPhoneNumber = json['Student PhoneNumber'];
-    studentParentPhoneNumber= json['Student Parent  PhoneNumber'];
-    studentAddress = json['Student Address'];
-    totalCompleteQuiz = json['Total Complete Quiz'];
-    totalCompleteHw = json['Total Complete Hw'];
-    totalCompleteExam = json['Total Complete Exam'];
-    totalCompleteApplyQuiz = json['Total Complete Apply Quiz'];
-    totalCompleteApplyHw = json['Total Complete Apply Hw'];
-    totalCompleteApplyExam = json['Total Complete Apply Exam'];
-    totalAttendanceLessons = json['Total Attendance Lessons'];
-    studentStartDate = json['Student Start Date'];
-    groupIdOfStudent=json['Group Id Of Student'];
-    groupNameOfStudent=json['Group Name Of Student'];
-    stageIdOfStudent=json['Stage Id Of Student'];
-    stageNameOfStudent=json['Stage Name Of Student'];
-    studentSubjects=json['Student Subjects'];
-    isSend = json['Is Send'];
+    studentCompleteId = json["studentCompleteId"];
+    startStudentCode = json['startStudentCode'];
+    studentId = json['studentId'];
+    teacherId = json['teacherId'];
+    studentDataBaseID= json['_id'];
+    studentName = json['studentName'];
+    studentImageUrl = json['studentImageUrl'];
+    studentEmail = json['studentEmail'];
+    studentPhoneNumber = json['studentPhoneNumber'];
+    studentParentPhoneNumber= json['studentParentPhoneNumber'];
+    studentAddress = json['studentAddress'];
+    totalCompleteQuiz = json['totalCompleteQuiz'];
+    totalCompleteHw = json['totalCompleteHw'];
+    totalCompleteExam = json['totalCompleteExam'];
+    totalCompleteApplyQuiz = json['totalCompleteApplyQuiz'];
+    totalCompleteApplyHw = json['totalCompleteApplyHw'];
+    totalCompleteApplyExam = json['totalCompleteApplyExam'];
+    totalAttendanceLessons = json['totalAttendanceLessons'];
+    studentStartDate = json['studentStartDate'];
+    groupIdOfStudent=json['groupIdOfStudent'];
+    groupNameOfStudent=json['groupNameOfStudent'];
+    stageIdOfStudent=json['stageIdOfStudent'];
+    stageNameOfStudent=json['stageNameOfStudent'];
+    studentSubjects=json['studentSubjects'];
+    isSend = json['isSend'];
     if (json['Student Degrees'] != null) {
       studentDegrees  = [];
       json['Student Degrees'].forEach((v) {
@@ -109,31 +109,31 @@ class Student {
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map["Student Complete Id"]=studentCompleteId;
-    map["Student Id"] = studentId;
-    map['Start Student Code']=startStudentCode;
-    map["Student DataBase ID"] = studentDataBaseID;
-    map["Student First Name"] = studentName;
-    map["Student Image Url"] = studentImageUrl;
-    map["Student Email"] = studentEmail;
-    map["Student PhoneNumber"] = studentPhoneNumber;
-    map["Student Parent  PhoneNumber"] = studentParentPhoneNumber;
-    map["Student Address"] = studentAddress;
-    map["Total Complete Quiz"] = totalCompleteQuiz;
-    map["Total Complete Hw"] = totalCompleteHw;
-    map["Total Complete Exam"] = totalCompleteExam;
-    map["Total Complete Apply Quiz"] = totalCompleteApplyQuiz;
-    map["Total Complete Apply Hw"] = totalCompleteApplyHw;
-    map["Total Complete Apply Exam"] = totalCompleteApplyExam;
-    map["Total Attendance Lessons"] = totalAttendanceLessons;
-    map["Student Start Date"] = studentStartDate;
-    map["Group Id Of Student"] = groupIdOfStudent;
-    map["Group Name Of Student"] = groupNameOfStudent;
-    map["Stage Id Of Student"] = stageIdOfStudent;
-    map["Stage Name Of Student"] = stageNameOfStudent;
-    map['Teacher Id']=teacherId;
-    map['Student Subjects']= studentSubjects;
-    map['Is Send'] = isSend;
+    map["studentCompleteId"]=studentCompleteId;
+    map["studentId"] = studentId;
+    map['startStudentCode']=startStudentCode;
+    map["_id"] = studentDataBaseID;
+    map["studentName"] = studentName;
+    map["studentImageUrl"] = studentImageUrl;
+    map["studentEmail"] = studentEmail;
+    map["studentPhoneNumber"] = studentPhoneNumber;
+    map["studentParentPhoneNumber"] = studentParentPhoneNumber;
+    map["studentAddress"] = studentAddress;
+    map["totalCompleteQuiz"] = totalCompleteQuiz;
+    map["totalCompleteHw"] = totalCompleteHw;
+    map["totalCompleteExam"] = totalCompleteExam;
+    map["totalCompleteApplyQuiz"] = totalCompleteApplyQuiz;
+    map["totalCompleteApplyHw"] = totalCompleteApplyHw;
+    map["totalCompleteApplyExam"] = totalCompleteApplyExam;
+    map["totalAttendanceLessons"] = totalAttendanceLessons;
+    map["studentStartDate"] = studentStartDate;
+    map["groupIdOfStudent"] = groupIdOfStudent;
+    map["groupNameOfStudent"] = groupNameOfStudent;
+    map["stageIdOfStudent"] = stageIdOfStudent;
+    map["stageNameOfStudent"] = stageNameOfStudent;
+    map['teacherId']=teacherId;
+    map['studentSubjects']= studentSubjects;
+    map['isSend'] = isSend;
     if (studentDegrees != null) {
       map['Student Degrees'] = studentDegrees?.map((v) => v.toJson()).toList();
     }

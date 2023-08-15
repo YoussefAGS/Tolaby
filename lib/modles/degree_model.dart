@@ -1,7 +1,14 @@
 class Degree {
-  String? typeDegree, degree, dateDegree,subjectType;
+  String? studentId;
+  String? typeDegree,
+      degree,
+      dateDegree,
+      subjectType;
   bool? isSend = false;
   int? v;
+
+
+
 
   Degree(
       {required this.typeDegree,
@@ -11,7 +18,11 @@ class Degree {
       this.isSend,
       });
 
+
+
+
   Degree.fromJson(dynamic json) {
+    studentId=json["studentId"];
     isSend = json['Is Send'];
     typeDegree = json['Degree Type'];
     subjectType = json['Subject Type'];
@@ -21,6 +32,9 @@ class Degree {
 
   }
 
+
+
+
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['Is Send'] = isSend;
@@ -28,8 +42,13 @@ class Degree {
     map["Subject Type"] = subjectType;
     map["Degree"] = degree;
     map["Degree Date"] = dateDegree;
+    map['studentId']=studentId;
     map['__v'] = v;
 
     return map;
   }
+
+
+
+
 }

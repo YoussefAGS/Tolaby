@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tolaby/screens/login/bloc_login/login_bloc.dart';
 
+import '../../utiles/constant.dart';
 import '../home/home_categories/home_categories_view.dart';
 import '../home/teacher_home_view/teacher_home_view.dart';
 
@@ -28,7 +29,7 @@ class Login extends StatelessWidget {
       if(state is StateLoginLoading ){
         return Center(
           child: Scaffold(
-            backgroundColor: Colors.white,
+            backgroundColor: primaryColorDark,
             body: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,9 +51,9 @@ class Login extends StatelessWidget {
       }
       else {
         return  Scaffold(
-        // backgroundColor: primaryColorDark,
+          backgroundColor: primaryColorDark,
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(20, 26, 46, 1.0),
+          backgroundColor: primaryColorDark,
           title: const Text('Login',style: TextStyle(
             color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold,
           ),),
@@ -64,6 +65,8 @@ class Login extends StatelessWidget {
           key: formkey,
           child: SingleChildScrollView(
             child: Container(
+
+              color: primaryColorDark,
               padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -168,7 +171,7 @@ class Login extends StatelessWidget {
                         children: [
                           Text('Login',textAlign: TextAlign.start,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: primaryColorDark,
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),),
